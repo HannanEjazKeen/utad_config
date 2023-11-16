@@ -44,3 +44,19 @@ To check the installed pytorch libraries (specifically cuda), use the following 
 ```bash
 python -m torch.utils.collect_env
 ```
+
+Clone this repository in mmdetection/config
+```bash
+clone https://github.com/HannanEjazKeen/utad_config.git uatd
+```
+
+
+To start the training of any configuration (for instance, detr resnet 50 network)
+```bash
+python tools/train.py configs/uatd/detr_r50_8xb2-150e_coco_uatd.py
+```
+
+To start the test of any configuration (for instance, detr resnet 50 network)
+```bash
+python tools/test.py configs/uatd/detr_r50_8xb2-150e_coco_uatd.py work_dirs/detr_r50_8xb2-150e_coco_uatd/epoch_1.pth
+```
