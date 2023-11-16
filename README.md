@@ -40,3 +40,7 @@ pip install -v -e .
 # "-e" means installing a project in editable mode,
 # thus any local modifications made to the code will take effect without reinstallation.
 ```
+To check the installed pytorch libraries (specifically cuda), use the following command
+```bash
+python -m torch.utils.collect_env
+```
