@@ -25,3 +25,18 @@ Install pytorch directly from pytorch channel
 conda install pytorch torchvision -c pytorch
 ```
 
+Install MMEngine and MMCV using MIM.
+```bash
+pip install -U openmim
+mim install mmengine
+mim install "mmcv>=2.0.0"
+```
+Install mmdetection from source:
+```bash
+git clone https://github.com/open-mmlab/mmdetection.git
+cd mmdetection
+pip install -v -e .
+# "-v" means verbose, or more output
+# "-e" means installing a project in editable mode,
+# thus any local modifications made to the code will take effect without reinstallation.
+```
