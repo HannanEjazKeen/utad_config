@@ -63,5 +63,5 @@ CUDA_VISIBLE_DEVICES=1,2,3 ./tools/dist_train.sh configs/uatd/faster-rcnn_r50_fp
 
 To start the test of any configuration (for instance, detr resnet 50 network)
 ```bash
-python tools/test.py configs/uatd/detr_r50_8xb2-150e_coco_uatd.py work_dirs/detr_r50_8xb2-150e_coco_uatd/epoch_1.pth
+python tools/test.py configs/uatd/detr_r50_8xb2-150e_coco_uatd.py work_dirs/detr_r50_8xb2-150e_coco_uatd/epoch_1.pth --show
 ```
