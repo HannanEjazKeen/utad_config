@@ -65,3 +65,15 @@ To start the test of any configuration (for instance, detr resnet 50 network)
 ```bash
 python tools/test.py configs/uatd/detr_r50_8xb2-150e_coco_uatd.py work_dirs/detr_r50_8xb2-150e_coco_uatd/epoch_1.pth --show
 ```
+
+If you would like to visualize the training process, edit the config/_base_/default_runtime.py.
+```bash
+vis_backends = [dict(type='TensorboardVisBackend')]
+```
+
+Now run the command on terminal,
+```bash
+tensorboard --logdir work_dirs/yolox_l_8xb8-300e_coco_uatd/ --host=localhost --port=8080
+```
+
+finally, run http://localhost:8080 in chrome.
