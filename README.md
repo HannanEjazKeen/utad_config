@@ -20,6 +20,11 @@ Create a seperate conda environment for mmdetection with python 3.8 version
 conda create --name mmdetection python=3.8 -y
 ```
 
+Activate the environment
+```bash
+conda activate mmdetection
+```
+
 Install pytorch directly from pytorch channel (The command on mmdetection website have cuda conflict therefore, use command from https://pytorch.org/get-started/previous-versions/)
 ```bash
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
