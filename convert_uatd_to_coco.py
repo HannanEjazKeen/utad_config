@@ -28,10 +28,10 @@ def convert_uatd_to_coco(out_file, dataset_path, category):
         objects = XML.getElementsByTagName('object')
         
         for obj in objects:
-        	x_min = int(obj.getElementsByTagName('xmin')[0].firstChild.data)/width;
-        	y_min = int(obj.getElementsByTagName('ymin')[0].firstChild.data)/height;
-        	x_max = int(obj.getElementsByTagName('xmax')[0].firstChild.data)/width;
-        	y_max = int(obj.getElementsByTagName('ymax')[0].firstChild.data)/height;
+        	x_min = int(obj.getElementsByTagName('xmin')[0].firstChild.data);
+        	y_min = int(obj.getElementsByTagName('ymin')[0].firstChild.data);
+        	x_max = int(obj.getElementsByTagName('xmax')[0].firstChild.data);
+        	y_max = int(obj.getElementsByTagName('ymax')[0].firstChild.data);
         	
         	data_anno = dict(image_id=idx,id=obj_count,category_id=0,bbox=[x_min, y_min, x_max - x_min, y_max - y_min],area=(x_max - x_min) * (y_max - y_min),segmentation=[],iscrowd=0)
         	annotations.append(data_anno)
@@ -48,7 +48,7 @@ def convert_uatd_to_coco(out_file, dataset_path, category):
 
 
 if __name__ == '__main__':
-    convert_uatd_to_coco(out_file='/media/hannan/samsung/Dataset/UATD_Dataset/UATD_COCO/images/train/annotation_coco.json',
-                            dataset_path='/media/hannan/samsung/Dataset/UATD_Dataset/UATD_COCO/',category='train/')
-    convert_uatd_to_coco(out_file='/media/hannan/samsung/Dataset/UATD_Dataset/UATD_COCO/images/val/annotation_coco.json',
-                            dataset_path='/media/hannan/samsung/Dataset/UATD_Dataset/UATD_COCO/',category='val/')
+    convert_uatd_to_coco(out_file='/mnt/public_work/Datasets/External/Object_Detection/Underwater_Detection/UATD/images/train/annotation_coco.json',
+                            dataset_path='/mnt/public_work/Datasets/External/Object_Detection/Underwater_Detection/UATD/',category='train/')
+    convert_uatd_to_coco(out_file='/mnt/public_work/Datasets/External/Object_Detection/Underwater_Detection/UATD/images/val/annotation_coco.json',
+                            dataset_path='/mnt/public_work/Datasets/External/Object_Detection/Underwater_Detection/UATD/',category='val/')
